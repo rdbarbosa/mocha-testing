@@ -3,9 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
+    "@babel/core": "^7.12.17",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
+    "@babel/register": "^7.13.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "D": "^1.0.0",
+    "babel-plugin-inline-react-svg": "^2.0.0",
+    "babel-preset-react-app-babel-7": "^4.0.2-0",
+    "chai": "^4.3.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "cheerio": "^1.0.0-rc.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "ignore-styles": "^5.0.1",
+    "mocha": "^8.3.0",
+    "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
@@ -14,8 +29,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "SET NODE_ENV=test&& mocha --require @babel/register --require ./src/test/helpers.js --require ./src/test/dom.js --require ignore-styles ./src/test/*.test.js",
+    "coverage": "SET NODE_ENV=test&& nyc --reporter=lcov --reporter=text npm run test",
+    "mocha": "SET NODE_ENV=test&& mocha --require mocha-snapshots --require jsdom-global/register --require @babel/register --require ignore-styles --reporter mocha-sonarqube-reporter ./src/test --reporter-options output=xunit.xml",
+    "sonar": "node sonar-project.js"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +51,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-babel": "^3.0.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "babel-plugin-istanbul": "^6.0.0",
+    "jsdom": "^16.4.0",
+    "jsdom-global": "^3.0.2",
+    "mocha-snapshots": "^4.2.0",
+    "mocha-sonarqube-reporter": "^1.0.2",
+    "nock": "^13.0.7",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.4",
+    "sonarqube-scanner": "^2.8.0"
   }
 }

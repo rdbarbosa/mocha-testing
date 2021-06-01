@@ -1,0 +1,14 @@
+<testExecutions version="1">
+<file path="src\test\App.test.js">
+<testCase name="Testin App Component: App renders a message" duration="10"/>
+</file>
+<file path="src\test\Todo.test.js">
+<testCase name="Testin Todo Component: input existe" duration="86"/>
+<testCase name="Testin Todo Component: Button existe" duration="7"/>
+<testCase name="Testin Todo Component: Input change" duration="17"/>
+<testCase name="Testin Todo Component: Input not change" duration="7"/>
+<testCase name="Testin Todo Component: button click" duration="53"/>
+<testCase name="Testin Todo Component: button click input empty" duration="14"/>
+<testCase name="Testin Todo Component: Test Call Endpoint" duration="14"/>
+</file>
+</testExecutions>

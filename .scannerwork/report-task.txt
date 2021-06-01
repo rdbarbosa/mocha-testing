@@ -1,0 +1,6 @@
+projectKey=React_Mocha
+serverUrl=http://localhost:9000
+serverVersion=8.5.1.38104
+dashboardUrl=http://localhost:9000/dashboard?id=React_Mocha
+ceTaskId=AXfWUh1KOKmD16f32kvd
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXfWUh1KOKmD16f32kvd
